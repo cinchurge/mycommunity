@@ -4,7 +4,7 @@ import os
 
 from flask import Flask, render_template, jsonify
 
-from mycommunity.lib.crime_maps_handler import CrimeMapsHandler
+from crime_maps_handler import CrimeMapsHandler
 
 
 CRIME_MAPS_TOKEN = os.environ["CRIME_MAPS_TOKEN"]

@@ -217,9 +217,12 @@ var mapViewModel = function() {
 		var dateRange = getDateRange(range_int);
 		this.startDate = dateRange.startDate;
 		this.endDate = dateRange.endDate;
+
+		var url = 'https://jgentes-Crime-Data-v1.p.mashape.com/crime?enddate='+this.endDate+'&lat='+self.coordinate().lat()+'&long='+self.coordinate().lng()+'&startdate='+this.startDate
+		console.log("url=" + url)
 		
 		$.ajax({
-			url: 'https://jgentes-Crime-Data-v1.p.mashape.com/crime?enddate='+this.endDate+'&lat='+self.coordinate().lat()+'&long='+self.coordinate().lng()+'&startdate='+this.startDate,
+			url: url,
 			type: 'GET',
 			dataType: 'json',
 			success: function(data) {
